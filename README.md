@@ -13,8 +13,8 @@ Impedance spectroscopy is a process in which a current is run through a mixture 
 ## File Structure: 
 
 - [data/](/data): Raw and cleaned data files
-- scripts/: Scripts for data analysis and visualizations
-- models/: Final Random Forest Classifier model, Logistic Regression, XGBoost Model
+- [scripts/](/scripts): Scripts for data analysis and visualizations
+- [models/](/scripts): Final Random Forest Classifier model, Logistic Regression, XGBoost Model
 
 ## Data Set:
 
