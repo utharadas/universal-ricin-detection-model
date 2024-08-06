@@ -19,6 +19,22 @@ Impedance spectroscopy is a technique where a current is passed through a mixtur
 - [data/](/data): Raw and cleaned data files
 - [scripts/](/scripts): Scripts for data analysis and visualizations
 - [models/](/scripts): Final Random Forest Classifier model, Logistic Regression, XGBoost Model
+  
+## Usage & Installation
+We use pandas, numpy, pickle, ColumnTransformer, StandardScaler, RandomForestClassifier, Pipeline, and train_test_split in this project so it will be useful to have them installed.
+```
+import pandas as pd
+import numpy as np
+import pickle
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+```
+```
+EXPLAIN HOW TO USE MODEL HERE.
+```
 
 ## Data
 ### Files
@@ -58,10 +74,6 @@ Computes the centered rolling mean of the phase angle over a window of 5 data po
 df['Last5slopePA'] = df['Last5increasePA'] / df['Last5freq']
 ```
 Calculates the slope of phase angle over frequency using the features Last5increasePA and Last5freq.
-## Usage
-```
-explain how to use model here.
-```
 
 ## Results
 - <b>Variable Importance:</b> Through feature importance analysis, the most significant variables indicating the presence of Ricin were found to have a mutual importance score over 1
