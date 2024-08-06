@@ -1,4 +1,8 @@
-# Universal Ricin Detection Model
+<h1 align="center">Universal Ricin Detection Model</h1>
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Ricin_structure.png" alt="Ricin Structure" width="150"/>
+</div>
+
 
 <table>
 <tr>
@@ -20,33 +24,67 @@ Impedance spectroscopy is a process in which a current is run through a mixture 
 ### Files
 - [data/raw data/Impedance](/data/raw20%data/Impedance) - Files containing raw data of food products' Z and PA values when tested for Ricin and without Ricin
 - [data/final data](/data/final20%data) - File with all food products and their properties, and PA and Z values from 5-20 minutes
-### Feature Engineering
 
+### Features Dropped
+- Features with low feature importance with Z were dropped: 'Sodium', 'Protein', 'Cholesterol', 'Fat', 'Potassium','L'
+
+### Feature Engineering
+```
+df['Last5freq'] = df.groupby('Food')['Freq(Hz)'].transform(lambda x: x.shift(-2) - x.shift(2))
+```
+Calculates the difference between the frequency values, shifted by 2 rows forward and 2 rows backward within each group of food.
+```
+df['Last5increase'] = df.groupby('Food')['Z(Ohm)'].transform(lambda x: x.shift(-2) - x.shift(2))
+```
+Calculates the difference in impedance values, shifted by 2 rows forward and 2 rows backward within each group of food.
+```
+df['Last5Z'] = df.groupby('Food')['Z(Ohm)'].transform(lambda x: x.rolling(window=5, center=True).mean())
+```
+Computes the centered rolling mean of impedance over a window of 5 data points within each group of food.
+```
+df['Last5slope'] = df['Last5increase'] / df['Last5freq']
+```
+Calculates the slope of impedance over frequency using the features Last5increase and Last5freq.
+```
+df['Last5increasePA'] = df.groupby('Food')['PA'].transform(lambda x: x.shift(-2) - x.shift(2))
+```
+Calculates the difference in phase angle values, shifted by 2 rows forward and 2 rows backward within each group of food.
+```
+df['Last5PA'] = df.groupby('Food')['PA'].transform(lambda x: x.rolling(window=5, center=True).mean())
+```
+Computes the centered rolling mean of the phase angle over a window of 5 data points within each group of food.
+```
+df['Last5slopePA'] = df['Last5increasePA'] / df['Last5freq']
+```
+Calculates the slope of phase angle over frequency using the features Last5increasePA and Last5freq.
 ## Usage
 ```
-How to run the code
+explain how to use model here.
 ```
 
-
-## Methodology
-- <b>Data Collection and Cleaning:</b> Use data scraping and cleaning techniques to prepare the impedance spectroscopy data for analysis.
-- <b>Data Analysis:</b> Analyze the data to identify variables that correlate with the presence of Ricin.
-- <b>Dimensionality Reduction:</b> Reduce the complexity of the data to focus on the most relevant features.
-- <b>Machine Learning Models:</b> Apply various machine learning models to classify samples as containing Ricin or not.
-
 ## Results
+- <b>Variable Importance:</b> Through feature importance analysis, the most significant variables indicating the presence of Ricin were found to have a mutual importance score over 1
 
-Variable Importance: Through feature importance analysis, the most significant variables indicating the presence of Ricin were found to be Measurement1 and Measurement3. These variables showed clear distinctions between samples containing Ricin and those that did not.
-Correlation Analysis: A strong correlation was observed between certain impedance measurements and the presence of Ricin, suggesting specific markers that can reliably indicate contamination.
-Machine Learning Model Performance:
+![rsults](/images/feat-analysis-bar.png) <img src="/images/feat-analysis-table.png" alt="Impedance Chart" width="200"/>
 
-Random Forest Classifier:
 
-Accuracy: 90%
-Precision: %
-Recall: %
-F1-Score: %
-The random forest model provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
+- <b>Random Forest Classifier:</b>
+   - Accuracy: 90%
+   - Precision: %
+   - Recall: %
+   - F1-Score: %
+
+   - Decided to use random forest model for final model because it provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
+
+## Reccomendations
+- **Expand the Dataset**
+   - Collect more data from diverse food samples to improve model robustness and accuracy.
+
+- **Implement Additional Machine Learning Algorithms**
+   - Explore algorithms like SVM and Gradient Boosting to compare their effectiveness.
+
+- **Incorporate More Feature Engineering Techniques**
+   - Apply advanced techniques to extract more informative features from the data.
 
 
 ## References
