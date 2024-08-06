@@ -83,10 +83,14 @@ Calculates the slope of phase angle over frequency using the features Last5incre
 
 - <b>Random Forest Classifier:</b> Decided to use random forest model for final model because it provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
 
-   - Accuracy: 90%
-   - Precision: %
-   - Recall: %
-   - F1-Score: %
+|          | precision | recall | f1-score | support |
+|----------|-----------|--------|----------|---------|
+| **0**    |           |        |          |         |
+| **1**    |           |        |          |         |
+| **accuracy**    |    |        |          |         |
+| **macro avg**    |   |        |          |         |
+| **weighted avg** |   |        |          |         |
+
 
 ## Reccomendations
 - **Expand the Dataset**: Collect more data from diverse food samples to improve model robustness and accuracy.
