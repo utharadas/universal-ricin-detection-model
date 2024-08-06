@@ -21,20 +21,14 @@ Impedance spectroscopy is a technique where a current is passed through a mixtur
 - [models/](/scripts): Final Random Forest Classifier model, Logistic Regression, XGBoost Model
   
 ## Usage & Installation
-We use pandas, numpy, pickle, ColumnTransformer, StandardScaler, RandomForestClassifier, Pipeline, and train_test_split in this project so it will be useful to have them installed.
+To use this model, you need to set up your environment by installing the required dependencies listed in the `requirements.txt` file. Run this:
+
 ```
-import pandas as pd
-import numpy as np
-import pickle
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import train_test_split
+git clone https://github.com/utharadas/universal-ricin-detection-model.git
+cd universal-ricin-detection-model
+pip install -r requirements.txt
 ```
-```
-EXPLAIN HOW TO USE MODEL HERE.
-```
+More detailed steps on how to use the model can be found in [finalmodel.ipynb](/models/finalmodel.ipynb)
 
 ## Data
 ### Files
