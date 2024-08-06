@@ -7,7 +7,7 @@
 <table>
 <tr>
 <td>
-Impedance spectroscopy is a process in which a current is run through a mixture in order to detecct the presence of certain molecules an chemical reactions within the sample. Our task was to use machine learning techniques to analyze the impedance spectroscopy data provided by Dr. Takhistov, an associate Food Science Professor  and his team in order to aid the development of a more cost effective way to detect Ricin, a common biotoxin found in many foods. After using data scraping and cleaning techniques to complete the data in a usable format, we began various forms of data analysis in order to determine which variables would most clearly show the presence of ricin. Once the dimensionality of the problem had been reduced, we began applying various machine learning techniques including random forests, logistic regression, nd neural networks to train a classification model to determine whether the data from a sample indicated the absence or presence of Ricin.
+Impedance spectroscopy is a technique where a current is passed through a mixture to detect the presence of specific molecules and chemical reactions within a sample. Our task was to use machine learning to analyze impedance spectroscopy data provided by Dr. Takhistov, an associate professor of food science, to develop a cost-effective method for detecting Ricin, a common biotoxin in many foods. We applied data scraping and cleaning techniques to prepare the data, followed by various forms of analysis to identify the variables that best indicate the presence of Ricin. After reducing the dimensionality of the problem, we used machine learning models, including random forests, and logistic regression, to train a classifier to determine whether Ricin is present in the samples.
 </td>
 </tr>
 </table>
@@ -78,14 +78,11 @@ explain how to use model here.
    - Decided to use random forest model for final model because it provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
 
 ## Reccomendations
-- **Expand the Dataset**
-   - Collect more data from diverse food samples to improve model robustness and accuracy.
+- **Expand the Dataset**: Collect more data from diverse food samples to improve model robustness and accuracy.
 
-- **Implement Additional Machine Learning Algorithms**
-   - Explore algorithms like SVM and Gradient Boosting to compare their effectiveness.
+- **Implement Additional Machine Learning Algorithms**: Explore algorithms like SVM and Gradient Boosting to compare their effectiveness.
 
-- **Incorporate More Feature Engineering Techniques**
-   - Apply advanced techniques to extract more informative features from the data.
+- **Incorporate More Feature Engineering Techniques**: Apply advanced techniques to extract more informative features from the data.
 
 
 ## References
