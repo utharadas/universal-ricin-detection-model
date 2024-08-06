@@ -41,7 +41,7 @@ EXPLAIN HOW TO USE MODEL HERE.
 - [data/raw data/Impedance](/data/raw20%data/Impedance) - Files containing raw data of food products' Z and PA values when tested for Ricin and without Ricin
 - [data/final data](/data/final20%data) - File with all food products and their properties, and PA and Z values from 5-20 minutes
 
-### Features Dropped
+### Dimension Reduction
 - Features with low feature importance with Z were dropped: 'Sodium', 'Protein', 'Cholesterol', 'Fat', 'Potassium','L'
 <img src="/images/feat-importance.png" alt="Impedance Chart" width="550"/>
 
