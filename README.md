@@ -81,13 +81,12 @@ Calculates the slope of phase angle over frequency using the features Last5incre
 ![rsults](/images/feat-analysis-bar.png) <img src="/images/feat-analysis-table.png" alt="Impedance Chart" width="200"/>
 
 
-- <b>Random Forest Classifier:</b>
+- <b>Random Forest Classifier:</b> Decided to use random forest model for final model because it provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
+
    - Accuracy: 90%
    - Precision: %
    - Recall: %
    - F1-Score: %
-
-   - Decided to use random forest model for final model because it provided robust results, identifying Ricin presence with high accuracy and recall, making it effective for detection.
 
 ## Reccomendations
 - **Expand the Dataset**: Collect more data from diverse food samples to improve model robustness and accuracy.
