@@ -115,7 +115,7 @@ Calculates the slope of phase angle over frequency using the features Last5incre
 
 
 ## Reccomendations
-- **Expand the Dataset**: Collect more data from diverse food samples to improve model robustness and accuracy.
+- **Expand the Dataset**: Collect more data from diverse food samples to improve model accuracy.
 
 - **Implement Additional Machine Learning Algorithms**: Explore algorithms like SVM and Gradient Boosting to compare their effectiveness.
 
