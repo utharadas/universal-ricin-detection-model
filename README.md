@@ -37,7 +37,7 @@ To use this model with different food products and your own data, please refer t
 cd universal-ricin-detection-model
 python driver.py
 ```
-You will have the option to either manually enter your data or to upload a csv file if you're using a large amount of data. If you manually entering data you will be asked to enter the following information:
+You will have the option to either manually enter your data or to upload a csv file if you're using a large amount of data. If you are manually entering data you will be asked to enter the following information in the terminal:
 ```
 Z at 25123:
 PA at 25123:
