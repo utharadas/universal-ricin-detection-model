@@ -19,8 +19,10 @@ Impedance spectroscopy is a technique where a current is passed through a mixtur
 - [data/](/data): Raw and cleaned data files
 - [scripts/](/scripts): Scripts for data analysis and visualizations
 - [models/](/scripts): Final Random Forest Classifier model, Logistic Regression, XGBoost Model
+- [driver.py](driver.py): Script where new food products can be tested
   
 ## Usage & Installation
+### Environment
 To use this model, you need to set up your environment by installing the required dependencies listed in the `requirements.txt` file. Run this:
 
 ```
@@ -28,12 +30,38 @@ git clone https://github.com/utharadas/universal-ricin-detection-model.git
 cd universal-ricin-detection-model
 pip install -r requirements.txt
 ```
-More detailed steps on how to use the model can be found in [finalmodel.ipynb](/models/finalmodel.ipynb)
+More details on the current model can be found in [finalmodel.ipynb](/models/finalmodel.ipynb)
+### Using Model
+To use this model with different food products and your own data, please refer to the `driver.py` script:
+```
+cd universal-ricin-detection-model
+python driver.py
+```
+After running the script you will be asked to enter the following information in the terminal to determine if your food contains ricin or not: 
+```
+Z at 25123:
+PA at 25123:
+Z at 19954:
+PA at 19954:
+Z at 31634:
+PA at 31634:
+Time (Works best at 10 minutes):
+pH: 
+carbs: 
+orp: 
+do(ppm): 
+cond100:
+cond100kh: 
+b*:
+a*: 
+```
+
 
 ## Data
 ### Files
 - [data/raw data/Impedance](/data/raw20%data/Impedance) - Files containing raw data of food products' Z and PA values when tested for Ricin and without Ricin
 - [data/final data](/data/final20%data) - File with all food products and their properties, and PA and Z values from 5-20 minutes
+- [data/raw data/Food contents, pH & ORP.xls](/data/raw20%data/Food20%contents,20%ph20%&20%ORP.xls): File with food data such as pH, conductivity, fat, sodium, etc.
 
 ### Dimension Reduction
 - Features with low feature importance with Z were dropped: 'Sodium', 'Protein', 'Cholesterol', 'Fat', 'Potassium','L'
@@ -79,11 +107,11 @@ Calculates the slope of phase angle over frequency using the features Last5incre
 
 |          | precision | recall | f1-score | support |
 |----------|-----------|--------|----------|---------|
-| **0**    |           |        |          |         |
-| **1**    |           |        |          |         |
-| **accuracy**    |    |        |          |         |
-| **macro avg**    |   |        |          |         |
-| **weighted avg** |   |        |          |         |
+| **0**    |  0.92     |  0.92  |  0.92    |    1457 |
+| **1**    |    0.91   | 0.91   |    0.91  |   1285  |
+| **accuracy**    |    |        |     0.92 |   2742  |
+| **macro avg**    |0.92|   0.92 |     0.92 |  2742  |
+| **weighted avg** |0.92|   0.92 |    0.92  |   2742 |
 
 
 ## Reccomendations
